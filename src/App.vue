@@ -149,7 +149,22 @@ watch(toastVisible, (visible) => {
       <div class="header__container header__container--top">
         <div class="header__breadcrumbs">
           <RouterLink to="/">Dashboard</RouterLink>
-          <span class="header__breadcrumbs-separator">/</span>
+          <div class="header__breadcrumbs-separator">
+            <svg
+              width="6"
+              height="10"
+              viewBox="0 0 6 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.21967 9.28033C-0.0732231 8.98744 -0.0732231 8.51256 0.21967 8.21967L3.68934 4.75L0.21967 1.28033C-0.0732231 0.987437 -0.0732231 0.512563 0.21967 0.21967C0.512563 -0.0732231 0.987437 -0.0732231 1.28033 0.21967L5.28033 4.21967C5.57322 4.51256 5.57322 4.98744 5.28033 5.28033L1.28033 9.28033C0.987437 9.57322 0.512563 9.57322 0.21967 9.28033Z"
+                fill="white"
+              />
+            </svg>
+          </div>
           <RouterLink to="/">User Management</RouterLink>
         </div>
         <div class="header__actions">
@@ -224,7 +239,41 @@ watch(toastVisible, (visible) => {
     <div class="date-section__container">
       <div class="date-section__content">
         <div class="date-section__header">
-          <h3 class="date-section__title title">Vacation mode</h3>
+          <div class="date-section__header-title">
+            <h3 class="date-section__title title">Vacation mode</h3>
+            <div class="status-label" :class="{ 'status-label--success': isValid }">
+              <span v-if="!isValid" class="status-label__text">
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.21967 0.21967C0.512563 -0.0732232 0.987437 -0.0732232 1.28033 0.21967L3.58 2.51934L5.87967 0.21967C6.17256 -0.0732232 6.64744 -0.0732232 6.94033 0.21967C7.23322 0.512563 7.23322 0.987437 6.94033 1.28033L4.64066 3.58L6.94033 5.87967C7.23322 6.17256 7.23322 6.64744 6.94033 6.94033C6.64744 7.23322 6.17256 7.23322 5.87967 6.94033L3.58 4.64066L1.28033 6.94033C0.987437 7.23322 0.512563 7.23322 0.21967 6.94033C-0.0732232 6.64744 -0.0732232 6.17256 0.21967 5.87967L2.51934 3.58L0.21967 1.28033C-0.0732232 0.987437 -0.0732232 0.512563 0.21967 0.21967Z"
+                    fill="#5E6A75"
+                  />
+                </svg>
+                disabled
+              </span>
+              <span v-else class="status-label__text">
+                <svg
+                  width="10"
+                  height="8"
+                  viewBox="0 0 10 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.82918 7.61526C3.73372 7.71128 3.60349 7.76485 3.46821 7.76485C3.33292 7.76485 3.20269 7.71128 3.10723 7.61526L0.224383 4.73195C-0.0747942 4.43277 -0.0747942 3.94764 0.224383 3.64902L0.585358 3.28795C0.884628 2.98878 1.3692 2.98878 1.66838 3.28795L3.46821 5.08787L8.3316 0.224383C8.63087 -0.0747942 9.11591 -0.0747942 9.41462 0.224383L9.7756 0.585451C10.0748 0.884628 10.0748 1.36967 9.7756 1.66838L3.82918 7.61526Z"
+                    fill="#00A338"
+                  />
+                </svg>
+                Enabled
+              </span>
+            </div>
+          </div>
           <p class="date-section__description description">
             Select Date, Substitute User and Backup Approver to Enable Vacation Mode.
           </p>
@@ -295,6 +344,23 @@ watch(toastVisible, (visible) => {
   line-height: 20px;
 }
 
+.status-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 10px;
+  color: #5e6a75;
+  border-radius: 22px;
+  background: var(--statuses-bg-grey);
+  padding: 5px 8px;
+}
+
+.status-label--success {
+  background: #e1f6e9;
+  color: var(--color-success);
+}
+
 .header {
   &__container {
     &--top {
@@ -302,25 +368,34 @@ watch(toastVisible, (visible) => {
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      padding: 0 16px 0 24px;
     }
     &--content {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      padding: 0 24px;
     }
   }
 
   &__top {
     color: #fff;
-    padding: 4px 16px 4px 24px;
+    padding: 4px 0 4px 0;
     background: linear-gradient(90deg, #161b40 0%, #2e3985 100%);
   }
 
   &__breadcrumbs {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
+    &-separator {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &__actions {
@@ -351,7 +426,7 @@ watch(toastVisible, (visible) => {
   }
 
   &__content {
-    padding: 14px 24px;
+    padding: 14px 0;
     border-bottom: 1px solid var(--color-border-light);
   }
 
@@ -382,6 +457,11 @@ watch(toastVisible, (visible) => {
     display: flex;
     flex-direction: column;
     gap: 4px;
+  }
+  &__header-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 }
 
