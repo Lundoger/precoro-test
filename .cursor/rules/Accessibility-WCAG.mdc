@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+
+- Follow WCAG requirements: semantic HTML, keyboard navigation, focus states, and accessible labels.
+- Ensure sufficient color contrast when choosing token variants.
+- All interactive elements must be reachable by keyboard and have visible focus.

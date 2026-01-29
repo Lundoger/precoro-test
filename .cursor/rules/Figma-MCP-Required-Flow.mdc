@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+
+### Required flow (do not skip)
+1. Run get_design_context first for the exact node(s).
+2. If response is too large/truncated: run get_metadata, then re-fetch only required node(s) with get_design_context.
+3. Run get_screenshot for a visual reference of the node/variant.
+4. Only after get_design_context + get_screenshot: download needed assets and start implementation.
+5. Translate the output (usually React + Tailwind) into this project’s conventions, tokens, components, and typography.
+6. Validate against Figma for 1:1 look and behavior before marking complete.

@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+
+- Treat Figma output as a reference, not final code style.
+- Replace hardcoded values with project tokens/components.
+- Keep code consistent with existing patterns (folder structure, naming, linting, hooks approach).
+- Do not introduce new libraries or large refactors unless explicitly requested.

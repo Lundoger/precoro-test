@@ -1,0 +1,10 @@
+---
+description: 
+alwaysApply: true
+---
+
+- IMPORTANT: Always use components from /path_to_your_design_system when possible.
+- Do not create new UI primitives if an equivalent component already exists in the design system.
+- Avoid hardcoded colors/spacing/typography; use the project’s tokens or theme variables (from Figma tokens when available).
+- Prefer consistent typography scale and spacing scale across the app.
+- Avoid inline styles unless truly necessary; place reusable UI in /components/ui.

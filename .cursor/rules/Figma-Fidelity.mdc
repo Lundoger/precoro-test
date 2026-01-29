@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+
+- Prioritize Figma fidelity: match layout, spacing, typography, and states 1:1 with the design.
+- Implement all visible states from the design (default/hover/active/disabled/loading) when applicable.
+- Use the same component variants as in Figma whenever possible (not “close enough” approximations).

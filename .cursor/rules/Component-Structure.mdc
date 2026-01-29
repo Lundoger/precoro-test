@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+
+- Place reusable UI components in /components/ui/.
+- Prefer composition over duplication: reuse existing components and extend via props/variants.
+- Avoid one-off “page-only” UI components unless explicitly required.
