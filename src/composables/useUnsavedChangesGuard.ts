@@ -18,7 +18,6 @@ export const useUnsavedChangesGuard = ({
       return
     }
     event.preventDefault()
-    event.returnValue = message
   }
 
   let removeRouteGuard: (() => void) | null = null
